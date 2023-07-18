@@ -1,0 +1,233 @@
+@import "./basic/default";
+
+@import "./basic/colors", "./basic/fonts", "./basic/mixins";
+
+
+.header {
+    width: 100%;
+    padding: 18px 0;
+    z-index: 1;
+    background-color: transparent;
+    position: absolute;
+}
+
+.header_wrapper {
+    @include between;
+
+    .header__nav {
+        .nav_link {
+            @include nav-link;
+        }
+
+        :last-child {
+            margin-right: 0;
+        }
+    }
+
+    .header__logo {
+        .logo {
+            @include logo;
+        }
+    }
+
+    .btn {
+        @include btn;
+        padding: 4px 57px;
+    }
+
+    .burger {
+        display: none;
+    }
+}
+
+
+.hero {
+    background-image: url(../images/Sect-1-bg.svg);
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+
+
+    .container {
+        .row {
+            .title {
+                color: $title;
+                font-size: 50px;
+                font-family: $main-font;
+                font-weight: 500;
+                line-height: 66px;
+                letter-spacing: 1px;
+            }
+
+            .sub-title {
+                @include sub-title;
+            }
+
+            .row {
+                .btn {
+                    @include btn;
+                    transition: 0.5s ease-in-out;
+                    padding: 4% 15%;
+                }
+
+                .btn:hover {
+                    background: none;
+                    border-radius: 2px;
+                    border: 2px solid $title;
+                    color: $title;
+                }
+            }
+        }
+    }
+}
+
+.light-fast-powerful {
+    padding-top: 109px;
+
+
+    .row {
+        .title {
+            @include h2-title;
+            margin-bottom: 16px;
+        }
+
+        .sub-title {
+            @include main-text;
+            margin-bottom: 80px;
+        }
+    }
+
+    .women-1_dop-text {
+        img {
+            width: 36px;
+            height: 36px;
+        }
+
+        .title {
+            @include women-1_dop-title
+        }
+
+        .sub-title {
+            @include women-1_dop-subtitle
+        }
+    }
+}
+
+.intro-1,
+.intro-2,
+.intro-3 {
+    padding-top: 122px;
+
+    .title {
+        @include h2-title;
+    }
+
+    .sub-title {
+        @include main-text;
+    }
+
+    .btn {
+        @include btn;
+        padding: 7px 30px;
+    }
+}
+
+.intro-3 {
+    padding-bottom: 122px;
+}
+
+.pricing {
+    min-height: 100vh;
+    padding-top: 122px;
+    width: 100%;
+    background-color: $bg-color;
+    position: relative;
+
+    .title {
+        @include h2-title;
+        margin-bottom: 16px;
+    }
+
+    .text {
+        color: var(--colour-main-blue-700, #222F65);
+        font-size: 50px;
+        font-family: $main-font;
+        font-weight: 500;
+        line-height: 66px;
+    }
+
+    .sub-title {
+        @include sub-title;
+    }
+
+    .btn {
+        @include btn;
+        color: #FFF;
+        font-size: 14px;
+        line-height: 24px;
+        padding: 10px 80px;
+    }
+}
+
+.pricing::before {
+    content: "";
+    min-height: 30vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../images/wave.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: rotate(180deg);
+}
+
+.footer {
+    .row {
+        margin: 50px 0;
+    }
+
+    .date {
+        color: #939EA4;
+        font-size: 14px;
+        font-family: $main-font;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .logo {
+        @include logo;
+    }
+
+    .btn {
+        @include btn;
+        padding: 10px;
+    }
+
+    .nese {
+        border-top: 1px solid #CDD1D4;
+        padding-top: 40px;
+
+        .icons{
+
+            img {
+                width: 16px;
+                height: 16px;
+                margin-left: 35px;
+            }
+        }
+    }
+
+    .group {
+        a {
+            margin-right: 60px;
+            color: var(--colour-main-blue-300, #929ECC);
+            font-size: 14px;
+            font-family: $main-font;
+            font-weight: 400;
+            line-height: 24px;
+        }
+    }
+}
+
+@import "./adptive";
